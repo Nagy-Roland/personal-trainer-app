@@ -1,0 +1,834 @@
+/* Base Layout & Mobile Scroll Lock */
+body {
+  margin: 0;
+  background-color: #09090b;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 672px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* Header & Reset Button */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.reset-btn:hover {
+  color: #ffffff;
+}
+
+/* Search Bar */
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+}
+
+.search-input::placeholder {
+  color: #71717a;
+}
+
+/* Tag Filters */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-btn {
+  background-color: #18181b;
+  color: #a1a1aa;
+  border: 1px solid #27272a;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tag-btn:hover {
+  background-color: #27272a;
+}
+
+.tag-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* Workout Split Cards */
+.splits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.split-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.split-card h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.split-card p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+}
+
+.category-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.category-badge {
+  background-color: #27272a;
+  color: #d4d4d8;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Primary Select Button */
+.select-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.select-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.select-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 0;
+  color: #71717a;
+}
+
+/* Frequency Slider Screen */
+.frequency-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.frequency-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.day-slider {
+  width: 100%;
+  accent-color: #2563eb;
+  cursor: pointer;
+  height: 6px;
+  background: #27272a;
+  border-radius: 3px;
+}
+
+.slider-markers {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
+/* Walkthrough Schedule & Exercise List */
+.walkthrough-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.day-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  margin: 2px;
+}
+
+.final-day-card {
+  border-color: #3f3f46;
+  background-color: #121215;
+}
+
+.day-card h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #60a5fa;
+}
+
+.exercise-count {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  margin-bottom: 4px;
+}
+
+.exercises-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.875rem;
+  background: #09090b;
+  padding: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.exercise-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.4);
+}
+
+.exercise-item:last-child {
+  border-bottom: none;
+}
+
+.ex-name {
+  color: #f4f4f5;
+}
+
+.ex-cat {
+  color: #71717a;
+  font-size: 0.75rem;
+}
+
+/* Action Buttons within Exercise Items */
+.exercise-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inline-details-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.inline-details-btn:hover {
+  color: #60a5fa;
+}
+
+.inline-add-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.inline-add-btn:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.inline-add-btn.added,
+.inline-add-btn:disabled {
+  background-color: #27272a;
+  color: #71717a;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Page Intro Banner */
+.page-intro-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.page-intro-banner h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+}
+
+.page-intro-banner p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+/* Interactive Collapsible Day Header */
+.day-card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+  transition: opacity 0.2s;
+}
+
+.day-card-header-row:hover {
+  opacity: 0.9;
+}
+
+.day-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Standout Dropdown Indicator Badge */
+.collapse-badge {
+  background-color: #27272a;
+  color: #60a5fa;
+  border: 1px solid #3f3f46;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease-in-out;
+}
+
+.day-card-header-row:hover .collapse-badge {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.tracker-counter-tag {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-left: 48px;
+}
+
+/* Responsive Grid for Selector Page with Side Mini Tracker */
+.selector-grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 850px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .selector-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    align-items: start;
+  }
+
+  .mini-tracker-window {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+/* Minimal Tracker Window */
+.mini-tracker-window {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.mini-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 10px;
+}
+
+.mini-tracker-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #60a5fa;
+}
+
+.mini-tracker-count {
+  font-size: 0.75rem;
+  background-color: #27272a;
+  color: #d4d4d8;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.mini-tracker-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.mini-tracker-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mini-day-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mini-exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mini-exercise-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.mini-ex-name {
+  color: #f4f4f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.mini-remove-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.mini-remove-btn:hover {
+  color: #f87171;
+}
+
+.mini-empty-text {
+  font-size: 0.75rem;
+  color: #52525b;
+  font-style: italic;
+}
+
+.generate-plan-btn {
+  margin-top: 8px;
+}
+
+/* Sets and Reps Configuration Row inside Final Workout Plan */
+.sets-reps-config-row {
+  display: flex;
+  gap: 12px;
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+}
+
+.set-rep-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.set-rep-field label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.set-rep-input {
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.set-rep-input:focus {
+  border-color: #2563eb;
+}
+
+/* Final Plan Expanded Exercise Stack */
+.final-exercises-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.final-exercise-card {
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.final-ex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.final-ex-title {
+  margin: 0 0 6px 0;
+  font-size: 1.125rem;
+  color: #ffffff;
+}
+
+.instructions-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  color: #60a5fa;
+}
+
+/* Exercise Detail Modal Overlay & Card */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.modal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.modal-title-large {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Embedded YouTube Iframe Player Container */
+.video-player-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #27272a;
+  box-sizing: border-box;
+}
+
+.video-loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #18181b;
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.embedded-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Organized Instructions Section & Universal Formatters */
+.instructions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.instructions-section h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #60a5fa;
+}
+
+.exercise-html-desc {
+  font-size: 0.9rem;
+  color: #d4d4d8;
+  line-height: 1.7;
+  background: #111115;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #27272a;
+  box-sizing: border-box;
+  width: 100%;
+  word-break: break-word;
+  text-align: left;
+}
+
+.exercise-html-content ul,
+.exercise-html-content ol {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.exercise-html-content li {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.exercise-html-content p {
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.exercise-html-content p:last-child {
+  margin-bottom: 0;
+}
+
+.normalized-instruction-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.normalized-instruction-list li {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.normalized-instruction-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.normalized-instruction-text p {
+  margin: 0;
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.no-desc {
+  font-size: 0.875rem;
+  color: #71717a;
+  font-style: italic;
+  text-align: left;
+}
